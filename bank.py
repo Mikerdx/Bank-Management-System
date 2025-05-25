@@ -13,4 +13,4 @@ class bank():
         
 root=tk.Tk()
 obj = bank(root)
-root.mainloop(
+root.mainloop()
