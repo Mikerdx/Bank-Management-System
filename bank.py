@@ -44,8 +44,11 @@ class bank():
         self.confirmInput = tk.Entry(self.openAcFrame, width=15, font=("Arial",15))
         self.confirmInput.grid(row=2, column=1, padx=5, pady=30)
         
-        okBtn = tk.Button(self.openAcFrame,text="Ok", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
+        okBtn = tk.Button(self.openAcFrame,text="Close", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
         okBtn.grid(row=3, column=0, padx=40 ,pady=120)
+        
+        closeBtn = tk.Button(self.openAcFrame,text="Ok", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
+        closeBtn.grid(row=3, column=1, padx=40 ,pady=120)
  
  
  
