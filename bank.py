@@ -25,7 +25,9 @@ class bank():
         wdBtn = tk.Button(mainFrame, width=20,text="Withdraw",bg="light blue", bd=3, relief="raised", font=("Arial",20,"bold"))
         wdBtn.grid(row=2, column=0, padx=40, pady=65)
  
- 
+    def openAc(self):
+        self.openAcFrame = tk.Frame(self.root, bg="light grey", bd=5, relief="ridge")
+        self.openAcFrame.place(x=400, y=90, width=450, height=550)
  
         
 root=tk.Tk()
