@@ -42,7 +42,10 @@ class bank():
         confirmLabel = tk.Label(self.openAcFrame, text="Confirm Password:", bg="light grey", font=("Arial",15,"bold"))
         confirmLabel.grid(row=0, column=0, padx=20, pady=30)
         self.confirmInput = tk.Entry(self.openAcFrame, width=15, font=("Arial",15))
-        self.confirmInput.grid(row=0, column=1, padx=5, pady=30)
+        self.confirmInput.grid(row=2, column=1, padx=5, pady=30)
+        
+        okBtn = tk.Button(self.openAcFrame,text="Ok", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
+        okBtn.grid(row=3, column=0, padx=40 ,pady=120)
  
  
  
