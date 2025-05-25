@@ -17,10 +17,14 @@ class bank():
         mainFrame.place(x=400, y=90, width=450, height=550)
         
         openAcBtn = tk.Button(mainFrame, width=20,text="open account",bg="light blue", bd=3, relief="raised", font=("Arial",20,"bold"))
-        openAcBtn.grid(row=0, column=0, padx=40, pady=70)
+        openAcBtn.grid(row=0, column=0, padx=40, pady=65)
         
         depBtn = tk.Button(mainFrame, width=20,text="Deposit",bg="light blue", bd=3, relief="raised", font=("Arial",20,"bold"))
-        depBtn.grid(row=1, column=0, padx=40, pady=70)
+        depBtn.grid(row=1, column=0, padx=40, pady=65)
+        
+        wdBtn = tk.Button(mainFrame, width=20,text="Withdraw",bg="light blue", bd=3, relief="raised", font=("Arial",20,"bold"))
+        wdBtn.grid(row=2, column=0, padx=40, pady=65)
+ 
  
  
         
