@@ -29,10 +29,16 @@ class bank():
         self.openAcFrame = tk.Frame(self.root, bg="light grey", bd=5, relief="ridge")
         self.openAcFrame.place(x=400, y=90, width=450, height=550)
         
-        uNameLabel = tk.Label(self.openAcFrame, text="User Name:", bg="light grey", font=("Arial",15,"bold"))
+        uNameLabel = tk.Label(self.openAcFrame, text="User Password:", bg="light grey", font=("Arial",15,"bold"))
         uNameLabel.grid(row=0, column=0, padx=20, pady=30)
         self.uNameInput = tk.Entry(self.openAcFrame, width=15, font=("Arial",15))
         self.uNameInput.grid(row=0, column=1, padx=5, pady=30)
+        
+        uPWLabel = tk.Label(self.openAcFrame, text="User Name:", bg="light grey", font=("Arial",15,"bold"))
+        uPWLabel.grid(row=0, column=0, padx=20, pady=30)
+        self.uPWInput = tk.Entry(self.openAcFrame, width=15, font=("Arial",15))
+        self.uPWInput.grid(row=0, column=1, padx=5, pady=30)
+ 
  
         
 root=tk.Tk()
