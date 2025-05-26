@@ -1,2 +1,0 @@
-create table account(userName varchar(15),userPW varchar(15),balance int(10))
-SELECT * from account
