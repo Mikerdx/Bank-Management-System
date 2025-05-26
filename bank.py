@@ -114,7 +114,7 @@ class bank():
             con.close()
             tk.messagebox.showinfo("success","Operation was successful!")
         else:
-             tk.messagebox.showerror("Error","Invalid Customer Name!")
+            tk.messagebox.showerror("Error","Invalid Customer Name!")
         
     def close_deposit(self):
         self.depositFrame.destroy()
@@ -141,10 +141,39 @@ class bank():
         okBtn = tk.Button(self.wdFrame,self.,text="Withdraw", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
         okBtn.grid(row=3, column=0, padx=40 ,pady=120)
         
-        closeBtn = tk.Button(self.wdFrame,command=self.,text="Close", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
+        closeBtn = tk.Button(self.wdFrame,command=self.close_wd,text="Close", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
         closeBtn.grid(row=3, column=1, padx=40 ,pady=120)
         
+    def wd_fun(self):
+        name = self.cNameInput.get()
+        pw = self.cPWInput.get()
+        amount= int(self.wdInput.get())
         
+        con = pymsql.connect(host="localhost", user="root",password="admin",database="bankdb")
+        cur = con.cursor()
+        cur.execute("select userPW, balance from account where userName=%s",name)
+        data = cur.fetchone()
+        if data:
+            if data[0]==pw:
+                if data[1] >= amount:
+                    update = data[1] -amount
+                    cur.execute("Update account set balance=%s ")
+                else:
+                    tk.messagebox.showerror("Error","Insufficient balance!")
+                
+            else:
+                tk.messagebox.showerror("Error","Invalid Customer Password!")
+        else:
+            tk.messagebox.showerror("Error","Invalid Customer Name!")
+            
+        
+        
+        
+        
+
+    def close_wd(self):
+        self.wdFrame.destroy()
+    
         
         
 root=tk.Tk()
