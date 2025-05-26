@@ -119,7 +119,33 @@ class bank():
     def close_deposit(self):
         self.depositFrame.destroy()
     
-    
+    def  wd(self):
+        self.wdFrame = tk.Frame(self.root, bg="light grey", bd=5, relief="ridge")
+        self.wdFrame.place(x=400, y=90, width=450, height=550)
+        
+        cNameLabel = tk.Label(self.wdFrame, text="User Name:", bg="light grey", font=("Arial",15,"bold"))
+        cNameLabel.grid(row=0, column=0, padx=20, pady=30)
+        self.cNameInput = tk.Entry(self.wdFrame, width=15, font=("Arial",15))
+        self.cNameInput.grid(row=0, column=1, padx=5, pady=30)
+        
+        cPWLabel = tk.Label(self.wdFrame, text="User Password:", bg="light grey", font=("Arial",15,"bold"))
+        cPWLabel.grid(row=0, column=0, padx=20, pady=30)
+        self.cPWInput = tk.Entry(self.wdFrame, width=15, font=("Arial",15))
+        self.cPWInput.grid(row=0, column=1, padx=5, pady=30)
+        
+        wdLabel = tk.Label(self.wdFrame, text="Enter Amount:", bg="light grey", font=("Arial",15,"bold"))
+        wdLabel.grid(row=0, column=0, padx=20, pady=30)
+        self.wdInput = tk.Entry(self.wdFrame, width=15, font=("Arial",15))
+        self.wdInput.grid(row=2, column=1, padx=5, pady=30)
+        
+        okBtn = tk.Button(self.wdFrame,self.,text="Withdraw", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
+        okBtn.grid(row=3, column=0, padx=40 ,pady=120)
+        
+        closeBtn = tk.Button(self.wdFrame,command=self.,text="Close", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
+        closeBtn.grid(row=3, column=1, padx=40 ,pady=120)
+        
+        
+        
         
 root=tk.Tk()
 obj = bank(root)
