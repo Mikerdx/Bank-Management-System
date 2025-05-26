@@ -20,10 +20,10 @@ class bank():
         openAcBtn = tk.Button(mainFrame,command=self.openAc, width=20,text="open account",bg="light blue", bd=3, relief="raised", font=("Arial",20,"bold"))
         openAcBtn.grid(row=0, column=0, padx=40, pady=65)
         
-        depBtn = tk.Button(mainFrame, width=20,text="Deposit",command=self.deposit_fun,bg="light blue", bd=3, relief="raised", font=("Arial",20,"bold"))
+        depBtn = tk.Button(mainFrame, width=20,text="Deposit",command=self.deposit,bg="light blue", bd=3, relief="raised", font=("Arial",20,"bold"))
         depBtn.grid(row=1, column=0, padx=40, pady=65)
         
-        wdBtn = tk.Button(mainFrame, width=20,text="Withdraw",bg="light blue", bd=3, relief="raised", font=("Arial",20,"bold"))
+        wdBtn = tk.Button(mainFrame, width=20,text="Withdraw",command=self.wd,bg="light blue", bd=3, relief="raised", font=("Arial",20,"bold"))
         wdBtn.grid(row=2, column=0, padx=40, pady=65)
  
     def openAc(self):
@@ -138,7 +138,7 @@ class bank():
         self.wdInput = tk.Entry(self.wdFrame, width=15, font=("Arial",15))
         self.wdInput.grid(row=2, column=1, padx=5, pady=30)
         
-        okBtn = tk.Button(self.wdFrame,self.,text="Withdraw", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
+        okBtn = tk.Button(self.wdFrame,self.wd_fun,text="Withdraw", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
         okBtn.grid(row=3, column=0, padx=40 ,pady=120)
         
         closeBtn = tk.Button(self.wdFrame,command=self.close_wd,text="Close", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
@@ -157,7 +157,10 @@ class bank():
             if data[0]==pw:
                 if data[1] >= amount:
                     update = data[1] -amount
-                    cur.execute("Update account set balance=%s ")
+                    cur.execute("Update account set balance=%s",(update,name))
+                    con.commit()
+                    con.close()
+                    tk.messagebox.showinfo("success","Operation was successful!")
                 else:
                     tk.messagebox.showerror("Error","Insufficient balance!")
                 
