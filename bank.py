@@ -76,7 +76,19 @@ class bank():
         self.uPWInput.delete(0,tk.END)
         self.confirmInput.delete(0,tk.END)
  
- 
+    def deposit(self):
+        self.depositFrame = tk.Frame(self.root, bg="light grey", bd=5, relief="ridge")
+        self.depositFrame.place(x=400, y=90, width=450, height=550)
+        
+        NameLabel = tk.Label(self.depositFrame, text="User Name:", bg="light grey", font=("Arial",15,"bold"))
+        NameLabel.grid(row=0, column=0, padx=20, pady=30)
+        self.NameInput = tk.Entry(self.depositFrame, width=15, font=("Arial",15))
+        self.NameInput.grid(row=0, column=1, padx=5, pady=30)
+        
+        amountLabel = tk.Label(self.depositFrame, text="Enter Amount:", bg="light grey", font=("Arial",15,"bold"))
+        amountLabel.grid(row=0, column=0, padx=20, pady=30)
+        self.amountInput = tk.Entry(self.depositFrame, width=15, font=("Arial",15))
+        self.amountInput.grid(row=0, column=1, padx=5, pady=30)
         
 root=tk.Tk()
 obj = bank(root)
