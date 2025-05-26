@@ -66,9 +66,15 @@ class bank():
             con.commit()
             con.close()
             tk.messagebox.showinfo("success","Account opened successfully!")
+            self.clear()
         else:
             tk.messagebox.showerror("Error","Both Passwords Should be Same!")
- 
+            self.clear
+            
+    def clear(self):
+        self.uNameInput.delete(0,tk.END)
+        self.uPWInput.delete(0,tk.END)
+        self.confirmInput.delete(0,tk.END)
  
  
         
