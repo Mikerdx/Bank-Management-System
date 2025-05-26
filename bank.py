@@ -1,5 +1,6 @@
 import tkinter as tk
-
+from tkinter import messagebox
+import pymysql
 class bank():
     def __init__(self,root):
         self.root = root
@@ -44,7 +45,7 @@ class bank():
         self.confirmInput = tk.Entry(self.openAcFrame, width=15, font=("Arial",15))
         self.confirmInput.grid(row=2, column=1, padx=5, pady=30)
         
-        okBtn = tk.Button(self.openAcFrame,text="Ok", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
+        okBtn = tk.Button(self.openAcFrame,self.insert,text="Ok", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
         okBtn.grid(row=3, column=0, padx=40 ,pady=120)
         
         closeBtn = tk.Button(self.openAcFrame,command=self.close_openAc,text="Close", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
@@ -52,6 +53,21 @@ class bank():
         
     def close_openAc(self):
         self.openAcFrame.destroy()
+    
+    def insert(self):
+        uName = self.uNameInput.get()
+        uPW = self.uPWInput.get()
+        confirm = self.confirmInput.get()
+        
+        if uPW == confirm:
+            con = pymsql.connect(host="localhost", user="root",password="admin",database="bankdb")
+            cur = con.cursor()
+            cur.execute("Insert into account (userName, userPW) values(%s, %s)",(uName,uPW))
+            con.commit()
+            con.close()
+            tk.messagebox.showinfo("success","Account opened successfully!")
+        else:
+            tk.messagebox.showerror("Error","Both Passwords Should be Same!")
  
  
  
