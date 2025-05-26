@@ -149,3 +149,8 @@ def assign_product_to_account():
     acc.products.append(product)
     session.commit()
     print("Product assigned to account.")
+
+def exit_program():
+    print("Goodbye!")
+    exit()
+

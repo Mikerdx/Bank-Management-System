@@ -1,8 +1,9 @@
 # lib/cli.py
 from lib.helpers import (
     create_account, deposit, withdraw, view_accounts, view_transactions,
-    add_bank_branch, add_product, assign_product_to_account, exit_program
+    add_bank_branch, add_product, assign_product_to_account
 )
+
 from lib.models import Base, engine
 
 Base.metadata.create_all(engine)
@@ -40,7 +41,8 @@ def main():
         elif choice == "8":
             assign_product_to_account()
         elif choice == "0":
-            exit_program()
+            print("Goodbye!")
+            exit()
         else:
             print("Invalid choice.")
 
