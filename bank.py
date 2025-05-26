@@ -20,7 +20,7 @@ class bank():
         openAcBtn = tk.Button(mainFrame,command=self.openAc, width=20,text="open account",bg="light blue", bd=3, relief="raised", font=("Arial",20,"bold"))
         openAcBtn.grid(row=0, column=0, padx=40, pady=65)
         
-        depBtn = tk.Button(mainFrame, width=20,text="Deposit",bg="light blue", bd=3, relief="raised", font=("Arial",20,"bold"))
+        depBtn = tk.Button(mainFrame, width=20,text="Deposit",command=self.deposit_fun,bg="light blue", bd=3, relief="raised", font=("Arial",20,"bold"))
         depBtn.grid(row=1, column=0, padx=40, pady=65)
         
         wdBtn = tk.Button(mainFrame, width=20,text="Withdraw",bg="light blue", bd=3, relief="raised", font=("Arial",20,"bold"))
@@ -86,9 +86,40 @@ class bank():
         self.NameInput.grid(row=0, column=1, padx=5, pady=30)
         
         amountLabel = tk.Label(self.depositFrame, text="Enter Amount:", bg="light grey", font=("Arial",15,"bold"))
-        amountLabel.grid(row=0, column=0, padx=20, pady=30)
+        amountLabel.grid(row=1, column=0, padx=20, pady=30)
         self.amountInput = tk.Entry(self.depositFrame, width=15, font=("Arial",15))
-        self.amountInput.grid(row=0, column=1, padx=5, pady=30)
+        self.amountInput.grid(row=1, column=1, padx=5, pady=30)
+        
+        okBtn = tk.Button(self.depositFrame,command=self.deposit_fun,text="Deposit", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
+        okBtn.grid(row=2, column=0, padx=40 ,pady=150)
+        
+        closeBtn = tk.Button(self.depositFrame,command=self.close_deposit,text="Close", bg="light Blue",bd=3, relief="raised",font=("Arial",15,"bold"))
+        closeBtn.grid(row=2, column=1, padx=40 ,pady=150)
+        
+    def deposit_fun(self):
+        name = self.NameInput.get()
+        amount = int(self.amountInput.get())
+        
+        con = pymsql.connect(host="localhost", user="root",password="admin",database="bankdb")
+        cur = con.cursor()
+        cur.execute("select balance from account where userName=%s", name)
+        data= cur.fetchone()
+        if data:
+            balance=data[0]
+            if data[0] is None:
+                balance=0
+            update = balance +amount
+            cur.execute("update account set balance=%s where userName=%s", (update,name))
+            con.commit()
+            con.close()
+            tk.messagebox.showinfo("success","Operation was successful!")
+        else:
+             tk.messagebox.showerror("Error","Invalid Customer Name!")
+        
+    def close_deposit(self):
+        self.depositFrame.destroy()
+    
+    
         
 root=tk.Tk()
 obj = bank(root)
