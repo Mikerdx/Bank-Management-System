@@ -1,4 +1,8 @@
 # lib/cli.py
+import sys
+import os
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
 from lib.helpers import (
     create_account, deposit, withdraw, view_accounts, view_transactions,
     add_bank_branch, add_product, assign_product_to_account

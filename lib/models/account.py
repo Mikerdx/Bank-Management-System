@@ -16,6 +16,7 @@ class Account(Base):
     profile = relationship("UserProfile", back_populates="account", uselist=False)
     branch = relationship("BankBranch", back_populates="accounts")
     transactions = relationship("Transaction", back_populates="account", cascade="all, delete-orphan")
+    account_products = relationship("AccountProduct", back_populates="account", cascade="all, delete-orphan")
     products = relationship(
         "Product",
         secondary="account_product",
