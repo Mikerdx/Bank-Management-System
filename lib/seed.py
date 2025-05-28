@@ -13,3 +13,9 @@ Base.metadata.create_all(engine)
 
 session = Session()
 fake = Faker()
+
+branches = []
+for _ in range(3):
+    branch = BankBranch(name=fake.company(), location=fake.city())
+    branches.append(branch)
+    session.add(branch)
