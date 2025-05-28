@@ -19,3 +19,9 @@ for _ in range(3):
     branch = BankBranch(name=fake.company(), location=fake.city())
     branches.append(branch)
     session.add(branch)
+    
+products = []
+for _ in range(5):
+    product = Product(name=fake.bs().capitalize(), description=fake.catch_phrase())
+    products.append(product)
+    session.add(product)
