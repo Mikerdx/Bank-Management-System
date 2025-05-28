@@ -1,5 +1,5 @@
 # lib/models/account_product.py
-from sqlalchemy import Column, Integer, DateTime, ForeignKey, PrimaryKeyConstraint
+from sqlalchemy import Column, Integer, DateTime, ForeignKey, PrimaryKeyConstraint,func
 from lib.models import Base
 
 class AccountProduct(Base):
