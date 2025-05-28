@@ -41,3 +41,8 @@ for _ in range(10):
         profile=profile,
         branch=branch
     )
+for _ in range(3):
+        tx_type = random.choice(['deposit', 'withdrawal'])
+        amount = random.randint(10, 1000)
+        tx = Transaction(type=tx_type, amount=amount, timestamp=datetime.utcnow(), account=account)
+        session.add(tx)
