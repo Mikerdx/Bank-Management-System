@@ -25,3 +25,19 @@ for _ in range(5):
     product = Product(name=fake.bs().capitalize(), description=fake.catch_phrase())
     products.append(product)
     session.add(product)
+    
+for _ in range(10):
+    profile = UserProfile(
+        full_name=fake.name(),
+        email=fake.email(),
+        phone=fake.phone_number(),
+        address=fake.address()
+    )
+    branch = random.choice(branches)
+    account = Account(
+        user_name=fake.user_name(),
+        user_pw="pass1234",
+        balance=random.randint(100, 5000),
+        profile=profile,
+        branch=branch
+    )
