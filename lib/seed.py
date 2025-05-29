@@ -1,3 +1,4 @@
+#creation of fake entities
 from faker import Faker
 from lib.models import Session, engine, Base
 from lib.models.account import Account
