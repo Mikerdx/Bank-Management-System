@@ -5,6 +5,7 @@ from lib.models import Base
 from lib.models.account_product import account_product
 
 class Account(Base):
+#map the account model to the table in database
     __tablename__ = 'account'
 
     id = Column(Integer, primary_key=True)
@@ -17,10 +18,14 @@ class Account(Base):
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 
 
-
+#relationships
+#one to one
     profile = relationship("UserProfile", back_populates="account", uselist=False)
+#many to one
     branch = relationship("BankBranch", back_populates="accounts")
+#one to many
     transactions = relationship("Transaction", back_populates="account", cascade="all, delete-orphan")
+#many to many
     products = relationship(
     "Product",
     secondary=account_product,
