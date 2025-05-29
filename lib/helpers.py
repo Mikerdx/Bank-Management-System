@@ -127,7 +127,7 @@ def add_product():
     session.add(product)
     session.commit()
     print("Product added.")
-
+# finds username and assigns a product to them
 def assign_product_to_account():
     session = Session()
     username = input("Username: ")
