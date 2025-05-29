@@ -15,5 +15,5 @@ class UserProfile(Base):
     created_at = Column(DateTime, default=func.now())
     updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
 
-# Reverse one-to-one relationship
+# Reverse one-to-one relationship(free nav)
     account = relationship("Account", back_populates="profile", uselist=False)
