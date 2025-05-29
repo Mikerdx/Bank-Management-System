@@ -96,6 +96,7 @@ def view_accounts():
         branch = acc.branch
         print(f"User: {acc.user_name}, Balance: {acc.balance}, Branch: {branch.name if branch else 'N/A'}, Profile: {profile.full_name if profile else 'N/A'}")
 
+#find user and return records for transaction
 def view_transactions():
     session = Session()
     username = input("Enter username to view transactions: ")
