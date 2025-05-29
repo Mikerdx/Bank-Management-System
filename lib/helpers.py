@@ -68,6 +68,7 @@ def deposit():
     session.commit()
     print("Deposit successful.")
 
+#Finds account ,checks for sufficient funds ,deducts withdrawal reuest amount and creates a transaction record
 def withdraw():
     session = Session()
     username = input("Username: ")
@@ -86,6 +87,7 @@ def withdraw():
     session.commit()
     print("Withdrawal successful.")
 
+#Join account w
 def view_accounts():
     session = Session()
     accounts = session.query(Account).all()
