@@ -43,3 +43,9 @@ Account ↔ BankBranch (Many-to-One)
 Account ↔ Transaction (One-to-Many)
 Account ↔ Product (Many-to-Many via account_product)
 
+# LINKS
+To demo -- **python -m lib.cli**
+Dbdiagram.io -- **https://dbdiagram.io/d/68347bd26980ade2eb70f4b3**
+
+# Author
+Name:Mike Bett
