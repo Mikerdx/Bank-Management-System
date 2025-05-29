@@ -108,6 +108,7 @@ def view_transactions():
     for tx in txs:
         print(f"{tx.timestamp}: {tx.type.capitalize()} of {tx.amount}")
 
+#Prompts branch name or creation of branch then saves it
 def add_bank_branch():
     session = Session()
     name = input("Branch name: ")
