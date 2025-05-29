@@ -8,6 +8,7 @@ from lib.models.user_profile import UserProfile
 from lib.models.bank_branch import BankBranch
 from lib.models.product import Product
 
+#Create a new user account along with a user profile and links it to a bank branch.
 def create_account():
     session = Session()
     username = input("Enter username: ")
@@ -29,9 +30,9 @@ def create_account():
 
     profile = UserProfile(full_name=full_name, email=email, phone=phone, address=address)
     session.add(profile)
-    session.flush()  # to get profile.id before commit
+    session.flush()  
 
-    # List branches
+    # List branches and linking 
     branches = session.query(BankBranch).all()
     if not branches:
         print("No bank branches available. Please add one first.")
