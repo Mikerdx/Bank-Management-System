@@ -16,3 +16,12 @@ lib/
 │ ├── product.py 
 │ └── account_product.py 
 └── seed.py 
+
+## KEY FEATURES
+-  Create and manage user accounts and profiles
+-  Deposit and withdraw money
+-  View transactions for specific users
+-  Manage bank branches
+-  Manage financial products 
+-  Assign products to accounts 
+-  Seed database with realistic fake data
