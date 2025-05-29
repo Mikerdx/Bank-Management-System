@@ -118,6 +118,7 @@ def add_bank_branch():
     session.commit()
     print("Branch added.")
 
+#add and save product
 def add_product():
     session = Session()
     name = input("Product name: ")
