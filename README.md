@@ -25,3 +25,21 @@ lib/
 -  Manage financial products 
 -  Assign products to accounts 
 -  Seed database with realistic fake data
+
+## TECHNOLOGIES USED 
+**Python**
+**SQLAlchemy**
+**SQLite**
+**Faker**
+**getpass**
+
+##  How to run 
+python lib/seed.py -to create fake data
+python lib/cli.py - to open menu options
+
+### Relationships Overview
+Account ↔ UserProfile (One-to-One)
+Account ↔ BankBranch (Many-to-One)
+Account ↔ Transaction (One-to-Many)
+Account ↔ Product (Many-to-Many via account_product)
+
