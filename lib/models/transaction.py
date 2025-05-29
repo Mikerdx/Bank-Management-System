@@ -10,7 +10,7 @@ class Transaction(Base):
 #Column addition 
     id = Column(Integer, primary_key=True)
     account_id = Column(Integer, ForeignKey('account.id'), nullable=False)
-    type = Column(String)  # 'deposit' or 'withdrawal'
+    type = Column(String) 
     amount = Column(Integer)
     timestamp = Column(DateTime, default=datetime.utcnow)
     created_at = Column(DateTime, default=func.now())

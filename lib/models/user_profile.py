@@ -4,6 +4,7 @@ from sqlalchemy.orm import relationship
 from lib.models import Base
 
 class UserProfile(Base):
+#map model to tablein database 
     __tablename__ = 'user_profile'
 
     id = Column(Integer, primary_key=True)
@@ -14,5 +15,5 @@ class UserProfile(Base):
     created_at = Column(DateTime, default=func.now())
     updated_at = Column(DateTime, default=func.now(), onupdate=func.now())
 
-    # Reverse one-to-one relationship
+# Reverse one-to-one relationship
     account = relationship("Account", back_populates="profile", uselist=False)
