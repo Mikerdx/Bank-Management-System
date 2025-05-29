@@ -87,7 +87,7 @@ def withdraw():
     session.commit()
     print("Withdrawal successful.")
 
-#Join account w
+#Join account with user profile and bank branch and returns details of user
 def view_accounts():
     session = Session()
     accounts = session.query(Account).all()
