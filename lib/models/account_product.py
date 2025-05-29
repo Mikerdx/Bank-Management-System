@@ -2,7 +2,7 @@
 from sqlalchemy import Column, Integer, DateTime, ForeignKey, PrimaryKeyConstraint,func
 from lib.models import Base
 from sqlalchemy import Table
-
+# tells SQLAlchemy that this table is part of the ORM's metadata and should be created in the database by use of base... and also has a timestamp
 account_product = Table(
     "account_product",
     Base.metadata,
