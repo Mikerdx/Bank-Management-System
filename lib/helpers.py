@@ -53,6 +53,7 @@ def create_account():
     session.commit()
     print("Account created successfully.")
 
+#Find existing account for deposit then after  deposit create transaction record with dep type
 def deposit():
     session = Session()
     username = input("Username: ")
