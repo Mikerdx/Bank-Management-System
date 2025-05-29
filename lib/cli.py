@@ -12,6 +12,7 @@ from lib.models import Base, engine
 
 Base.metadata.create_all(engine)
 
+#menu list options 
 def menu():
     print("\nBank CLI")
     print("1. Open Account")
@@ -24,6 +25,7 @@ def menu():
     print("8. Assign Product to Account")
     print("0. Exit")
 
+#Display menu,wait for user to input required details and  then executes the function based on the choice of user
 def main():
     while True:
         menu()
