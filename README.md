@@ -1,5 +1,5 @@
-# CLI BASED PROJECT
-# BANK MANAGEMENT SYSTEM 
+# Bank Management System (CLI-Based)
+
 This is a Python-based Bank Management System using SQLAlchemy ORM and a Command-Line Interface (CLI).
 It allows users to manage bank accounts, handle transactions and assign financial products
 
@@ -32,8 +32,10 @@ lib/
 **SQLite**
 **Faker**
 **getpass**
+**Alembic**
 
 ##  How to run 
+Pip install
 python lib/seed.py -to create fake data
 python lib/cli.py - to open menu options
 
@@ -49,3 +51,5 @@ Dbdiagram.io -- **https://dbdiagram.io/d/68347bd26980ade2eb70f4b3**
 
 # Author
 Name:Mike Bett
+GitHub: Mikerdx
+Email: mike.bett@student.moringaschool.com
