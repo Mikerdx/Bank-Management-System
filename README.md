@@ -35,9 +35,10 @@ lib/
 **Alembic**
 
 ##  How to run 
-Pip install
-python lib/seed.py -to create fake data
-python lib/cli.py - to open menu options
+`pipenv install`
+`pipenv install`
+`python lib/seed.py`-to create fake data
+`python lib/cli.py`- to open menu options
 
 ### Relationships Overview
 Account ↔ UserProfile (One-to-One)
