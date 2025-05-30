@@ -54,3 +54,6 @@ Dbdiagram.io -- **https://dbdiagram.io/d/68347bd26980ade2eb70f4b3**
 Name:Mike Bett
 GitHub: Mikerdx
 Email: mike.bett@student.moringaschool.com
+
+# License
+This project is licensed under the MIT License.
