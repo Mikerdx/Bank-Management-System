@@ -36,9 +36,8 @@ lib/
 
 ##  How to run 
 `pipenv install`
-`pipenv install`
-`python lib/seed.py`-to create fake data
-`python lib/cli.py`- to open menu options
+`pipenv python3 lib.seed`-to create fake data
+`pipenv python3 lib.cli`- to open menu options
 
 ### Relationships Overview
 Account ↔ UserProfile (One-to-One)
