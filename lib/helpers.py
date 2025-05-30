@@ -157,6 +157,20 @@ def assign_product_to_account():
     session.commit()
     print("Product assigned to account.")
 
+def view_all_products():
+    session = Session()
+    products = session.query(Product).all()
+
+    if not products:
+        print("No products found.")
+        return
+
+    print("\n=== All Products ===")
+    for p in products:
+        print(f"ID: {p.id} | Name: {p.name} | Description: {p.description}")
+    
+    session.close()
+
 def exit_program():
     print("Goodbye!")
     exit()

@@ -5,7 +5,7 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from lib.helpers import (
     create_account, deposit, withdraw, view_accounts, view_transactions,
-    add_bank_branch, add_product, assign_product_to_account
+    add_bank_branch, add_product, assign_product_to_account, view_all_products
 )
 
 from lib.models import Base, engine
@@ -23,6 +23,7 @@ def menu():
     print("6. Add Bank Branch")
     print("7. Add Product")
     print("8. Assign Product to Account")
+    print("9. View All Products")
     print("0. Exit")
 
 #Display menu,wait for user to input required details and  then executes the function based on the choice of user
@@ -46,6 +47,8 @@ def main():
             add_product()
         elif choice == "8":
             assign_product_to_account()
+        elif choice == "9":
+            view_all_products()
         elif choice == "0":
             print("Goodbye!")
             exit()
